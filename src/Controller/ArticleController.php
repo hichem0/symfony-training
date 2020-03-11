@@ -11,15 +11,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/", name="app_hompage")
      */
     public function homepage()
     {
-        return new Response('omg my firt page in symfony');
+        return $this->render('article/homepage.html.twig');
     }
 
     /**
-     * @Route("/seconde/{slug}")
+     * @Route("/seconde/{slug}", name="article_show")
      */
     public function show($slug)
     {
